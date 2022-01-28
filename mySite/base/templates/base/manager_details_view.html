@@ -1,0 +1,13 @@
+{% extends 'base/layout.html' %} {% block content %}
+<div class="features" id="detailview">
+    <h1>имя: {{ manager.name }}</h1>
+    <p>поставщик: {{ manager.supplier.name }}</p>
+    <p>телефон: {{ manager.phone }}</p>
+    <p>почта: {{ manager.e_mail }}</p>
+    <p>возраст: {{ manager.age }}</p>
+
+    {%if request.user.is_authenticated and request.user.is_staff %}
+    <a href="{% url 'man_delete' manager.id %}" class="mybtn" id="delupbutton">Удалить</a>
+    <a href="{% url 'man_update' manager.id %}" class="mybtn" id="delupbutton">Обновить</a> {% endif %}
+</div>
+{% endblock %} {% block title %}Информация о менеджере{% endblock %}

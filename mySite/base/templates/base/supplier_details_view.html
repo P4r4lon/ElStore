@@ -1,0 +1,9 @@
+{% extends 'base/layout.html' %} {% block content %}
+<div class="features" id="detailview">
+    <h1>{{ supplier.name }}</h1>
+    <p>{{ supplier.city }}</p>
+    {%if request.user.is_authenticated and request.user.is_staff %}
+    <a href="{% url 'sup_delete' supplier.id %}" class="mybtn" id="delupbutton">Удалить</a>
+    <a href="{% url 'sup_update' supplier.id %}" class="mybtn" id="delupbutton">Обновить</a> {% endif %}
+</div>
+{% endblock %} {% block title %}{{ article.title }}{% endblock %}

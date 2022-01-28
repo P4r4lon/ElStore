@@ -1,0 +1,12 @@
+{% extends 'base/layout.html' %} {% block content %}
+<div class="features" id="detailview">
+    <h1>Удаление клиента </h1>
+    <h2>"{{ client.adress }}"</h2>
+    <form method="post">
+        {% csrf_token %}
+
+        <button class="mybtn" id="singlebutton" type="submit">Удалить</button>
+
+    </form>
+</div>
+{% endblock %} {% block title %}Форма по удалению клиента{% endblock %}

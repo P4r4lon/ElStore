@@ -1,0 +1,22 @@
+{% extends 'base/layout.html' %} {% load static %} {% block content %}
+
+<div class="textblock">
+    <h1>
+        Добро пожаловать в ElStore
+    </h1>
+    <p> Данное web-приложение разработано для использования в области торговли в сети розничных магазинов для контроля состояния склада, проведения инвентаризации и оформления различных документов при взаимодействии с поставщиками и клиентами</p>
+
+</div>
+<hr>
+
+<div class="textblock">
+    <p> В режиме гостя вам предоставлена возможность просматривать информацию о менеджерах и поставщиках. Для того чтобы использовать полный функционал продукта требуется авторизация</p>
+</div>
+<hr>
+<div>
+    <a href="admin/login/?next=/clients"><button class="mybtn">Авторизация</button></a>
+    <hr>
+    <img src="{% static 'base/img/laptop.png' %}" alt="img" class="textblock">
+    <img src="{% static 'base/img/phone.png' %}" alt="img" class="textblock">
+</div>
+{% endblock %} {% block title %}Main page{% endblock %}

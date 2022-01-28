@@ -1,0 +1,181 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+body {
+    background: #2c2c2c;
+}
+
+aside {
+    float: left;
+    background: #181818;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 5px solid #4d4d4d;
+    bottom: 0;
+}
+
+aside img {
+    width: 240px;
+    float: left;
+}
+
+aside h3 {
+    margin-top: 100px;
+    margin-left: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    font-size: 22px;
+    color: #fff;
+    display: block;
+    margin-top: 20px;
+    transition: transform .6s ease;
+}
+
+aside ul a {
+    text-decoration: none;
+}
+
+aside ul li:hover,
+aside ul a:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05)
+}
+
+main .features {
+    float: left;
+    color: #fff;
+    margin-top: 10px;
+    text-align: center;
+    width: 75%;
+}
+
+main .features h1 {
+    font-size: 50px;
+}
+
+main .features p {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.alert-warning {
+    border-radius: 8px;
+    border: 2px solid rgb(70, 78, 74);
+    display: inline-block;
+    max-width: 800px;
+    clear: both;
+    width: 400px;
+    margin: 20px auto -15px;
+    transition: 0.6s;
+    line-height: 10px;
+}
+
+.alert-warning a {
+    text-decoration: none;
+}
+
+.alert-warning:hover {
+    transform: scale(1.05);
+}
+
+form {
+    margin-left: 30%;
+    width: 500px;
+    margin-top: 50px;
+}
+
+.textblock {
+    padding-left: 10px;
+    text-shadow: 3px 4px 4px rgba(3, 0, 0, 0.993);
+    color: aliceblue;
+    font-size: xx-large;
+    text-indent: 25px;
+}
+
+.textblock h1 {
+    text-align: center;
+}
+
+hr {
+    color: beige;
+}
+
+.mybtn {
+    margin-left: 420px;
+    background-color: transparent;
+    padding: 8px 220px;
+    border: 2px solid rgb(250, 247, 247);
+    border-radius: 5px;
+    font-size: 26px;
+    letter-spacing: 1.5px;
+    color: rgb(241, 224, 224);
+    outline: none;
+    cursor: pointer;
+}
+
+.mybtn:hover {
+    background-color: rgb(253, 246, 246);
+    color: rgb(7, 0, 0);
+    transition: 1s;
+}
+
+#detailview {
+    margin-top: 100px;
+    border: 2px solid wheat;
+    width: 50%;
+    margin-left: 300px;
+}
+
+#comment {
+    margin-top: 50px;
+    border: 2px solid wheat;
+    width: 50%;
+    margin-left: 300px;
+    padding-bottom: 20px;
+}
+
+#addbutton {
+    margin-top: 60px;
+}
+
+#delupbutton {
+    display: inline-block;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: auto;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+#singlebutton {
+    margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: -123px;
+    margin-bottom: 5px;
+}
+
+#search {
+    margin-left: 450px;
+}
+
+#sortbutton {
+    padding: 10px;
+    font-size: small;
+    display: inline-block;
+    margin: 10px;
+    margin-left: 0;
+    margin-bottom: -50px;
+}
+
+#searcher {
+    margin-left: 40px;
+}

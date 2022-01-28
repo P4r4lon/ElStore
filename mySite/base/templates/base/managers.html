@@ -1,0 +1,19 @@
+{% extends 'base/layout.html' %} {% block content %}
+<div class="features">
+    <h1>
+        Страница с информацией о менеджерах
+    </h1>
+    {% for m in managers %}
+    <div class="alert-warning">
+        <a href="{% url 'man_view' m.id %}"><h3>имя: {{m.name}}</h3></a>
+        <p>поставщик: {{ m.supplier.name }}</p>
+        <p>телефон: {{m.phone}}</p>
+        <p>возраст: {{m.age}}</p>
+        <p>почта: {{m.e_mail}}</p>
+    </div>
+    {% endfor %}
+</div>
+{%if request.user.is_authenticated and request.user.is_staff %}
+
+<a href="{% url 'man_create' %}"><button class="mybtn" id="addbutton">Добавить</button></a> {% endif %}
+{% endblock %} {% block title %}Manager page{% endblock %}

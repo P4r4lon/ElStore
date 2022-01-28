@@ -1,0 +1,19 @@
+{% extends 'base/layout.html' %} {% block content %}
+<div class="features">
+    <h1>
+        Страница с информацией о клиентах
+    </h1>
+    {% for cl in clients %}
+    <div class="alert-warning">
+        <a href="{% url 'cl_view' cl.id %}">
+            <h3>магазин: {{cl.adress}}</h3>
+        </a>
+        <p>телефон: {{cl.phone}}</p>
+        <p>ФИО директора: {{cl.director}}</p>
+        <p>почта: {{cl.e_mail}}</p>
+    </div>
+    {% endfor %}
+</div>
+{%if request.user.is_authenticated and request.user.is_staff %}
+
+<a href="{% url 'cl_create' %}"><button class="mybtn" id="addbutton">Добавить</button></a> {% endif %} {% endblock %} {% block title %}Client page{% endblock %}

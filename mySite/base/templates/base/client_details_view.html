@@ -1,0 +1,26 @@
+{% extends 'base/layout.html' %} {% block content %}
+<div class="features" id="detailview">
+    <h1>магазин: {{ client.adress }}</h1>
+    <p>телефон: {{ client.phone }}</p>
+    <p>ФИО директора: {{ client.director }}</p>
+    <p>почта: {{ client.e_mail }}</p>
+
+    {%if request.user.is_authenticated and request.user.is_staff %}
+    <a href="{% url 'cl_delete' client.id %}" class="mybtn" id="delupbutton">Удалить</a>
+    <a href="{% url 'cl_update' client.id %}" class="mybtn" id="delupbutton">Обновить</a>
+    <a href="{% url 'comment_new' client.id %}" class="mybtn" id="delupbutton">Добавить комментарий</a> {% endif %}
+
+</div>
+<div class="features" id="comment">
+    <h1>Комментарии</h1>
+    {% for comment in client.comment.all %}
+
+    <div class="alert-warning">
+        <p>{{comment}}</p>
+        <a href="{% url 'comment_remove' client.id comment.id %}">
+            <p><i class="fas fa-trash"></i></a> <a href="{% url 'comment_edit' client.id comment.id %}"><i class="fas fa-cog"></i></a></p>
+
+    </div>
+
+    {% endfor %}
+</div> {% endblock %} {% block title %}Информация о клиенте{% endblock %}

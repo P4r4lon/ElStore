@@ -1,0 +1,14 @@
+{% extends 'base/layout.html' %} {% block content %}
+<div class="features" id="detailview">
+    <h3>{{order.name}}</h3>
+    <p>Поставщик: {{order.supplier.name}}</p>
+    <p>адрес магазина: {{order.dest.adress}}</p>
+    <p>кол-во: {{order.amount}}</p>
+    <p>цена за шт: {{order.price}}₽</p>
+    <p>{{order.date}}</p>
+
+    {%if request.user.is_authenticated and request.user.is_staff %}
+    <a href="{% url 'ord_delete' order.id %}" class="mybtn" id="delupbutton">Удалить</a>
+    <a href="{% url 'ord_update' order.id %}" class="mybtn" id="delupbutton">Обновить</a> {% endif %}
+</div>
+{% endblock %} {% block title %}Информация о клиенте{% endblock %}

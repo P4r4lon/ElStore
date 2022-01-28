@@ -1,0 +1,14 @@
+{% extends 'base/layout.html' %} {% block content %}
+<div class="features">
+    <h1>Форма по добавлению/обновлению менеджера</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br>
+
+        <span>{{error}}</span>
+        <button class="mybtn" id="delupbutton" type="submit">Заполнить</button>
+
+    </form>
+</div>
+{% endblock %} {% block title %}Форма по добавлению менеджера{% endblock %}

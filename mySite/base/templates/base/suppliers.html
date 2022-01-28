@@ -1,0 +1,20 @@
+{% extends 'base/layout.html' %} {% block content %}
+<div class="features">
+    <h1>
+        Страница с информацией о поставщиках
+    </h1>
+    {% for sp in suppliers %}
+    <div class="alert-warning">
+        <h3>
+            <a href="{% url 'sup_view' sp.id %}">{{sp.name}}</a>
+        </h3>
+        <p>{{sp.city}}</p>
+
+    </div>
+    {% endfor %}
+
+
+</div>
+{%if request.user.is_authenticated and request.user.is_staff %}
+
+<a href="{% url 'sup_create' %}"><button class="mybtn" id="addbutton">Добавить</button></a> {% endif %}{% endblock %} {% block title %}Supplier page{% endblock %}

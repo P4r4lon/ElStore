@@ -1,0 +1,34 @@
+{% extends 'base/layout.html' %} {% block content %}
+<div class="features">
+    <h1>
+        Страница с информацией о заказах
+    </h1>
+    <a href="{% url 'orders' filter='price' %}"><button class="mybtn" id="sortbutton">Цена<i class="fas fa-arrow-alt-circle-up"></i></button></a>
+	<a href="{% url 'orders' filter='-price' %}"><button class="mybtn" id="sortbutton">Цена<i class="fas fa-arrow-alt-circle-down"></i></button></a>
+	<a href="{% url 'orders' filter='amount' %}"><button class="mybtn" id="sortbutton">Количество<i class="fas fa-arrow-alt-circle-up"></i></button></a>
+	<a href="{% url 'orders' filter='-amount' %}"><button class="mybtn" id="sortbutton">Количество<i class="fas fa-arrow-alt-circle-down"></i></button></a>
+    	<div class="md-form pt-2 mt-0" id="searcher">
+		<form method="get" action="{% url 'orders' filter='-date' %}">
+	    	<input type="text" class="form-control" placeholder="Поиск" name="search">
+		</form>
+	</div>
+    {% for or in orders %}
+    <div class="alert-warning">
+        <a href="{% url 'ord_view' or.id %}">
+            <h3>{{or.name}}</h3>
+        </a>
+        <p>Поставщик: {{or.supplier.name}}</p>
+        <p>адрес магазина: {{or.dest.adress}}</p>
+        <p>кол-во: {{or.amount}}</p>
+        <p>цена за шт: {{or.price}}₽</p>
+        <p>Общая цена: {% widthratio or.amount 1 or.price %}₽</p>
+        <p>{{or.date}}</p>
+
+    </div>
+    {% endfor %}
+</div>
+{%if request.user.is_authenticated and request.user.is_staff %}
+
+<a href="{% url 'ord_create' %}"><button class="mybtn" id="addbutton">Добавить</button></a> {% endif %}
+<h3 class="features">Средняяя стоимость продукта: <b>{{avg}}</b>₽</h3>
+{% endblock %} {% block title %}Order page{% endblock %}
